@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Advanced Internship UI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #f0f4ff, #fef9ff);
+      color: #111827;
+      transition: background 0.5s ease;
+    }
+
+    header, footer {
+      background: #111827;
+      color: white;
+      padding: 1rem 2rem;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .sticky-banner {
+      position: sticky;
+      top: 1rem;
+      margin-left: 1rem;
+      background: linear-gradient(90deg, #10b981, #3b82f6);
+      color: white;
+      padding: 0.7rem 1.6rem;
+      border-radius: 50px;
+      font-weight: 600;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+      z-index: 999;
+      transition: all 0.3s ease-in-out;
+      display: inline-block;
+      animation: slideInLeft 1s ease;
+    }
+    .sticky-banner:hover {
+      transform: translateY(-3px) scale(1.05);
+    }
+    .sticky-banner a {
+      color: white;
+      text-decoration: none;
+    }
+
+    @keyframes slideInLeft {
+      from { transform: translateX(-100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    .hamburger {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      font-size: 1.8rem;
+      z-index: 1100;
+      background: #111827;
+      color: white;
+      border: none;
+      padding: 0.6rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .hamburger.open {
+      transform: rotate(90deg);
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -300px;
+      width: 260px;
+      height: 100%;
+      background: linear-gradient(to bottom right, #111827, #1f2937);
+      color: white;
+      padding: 2rem 1.2rem;
+      transition: left 0.4s ease;
+      z-index: 1000;
+      box-shadow: 2px 0 20px rgba(0,0,0,0.25);
+    }
+    .sidebar.active {
+      left: 0;
+    }
+    .sidebar nav ul {
+      list-style: none;
+    }
+    .sidebar nav ul li {
+      margin: 1rem 0;
+    }
+    .sidebar nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0.5rem 0.8rem;
+      border-radius: 8px;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .sidebar nav ul li a:hover {
+      background: rgba(255,255,255,0.1);
+      transform: translateX(10px);
+    }
+
+    .content {
+      padding: 5rem 2rem 2rem 2rem;
+      animation: fadeInUp 1s ease;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .section {
+      background: white;
+      margin: 2rem 0;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    }
+
+    @media (max-width: 768px) {
+      .sticky-banner {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Internship Program Portal</h1>
+  </header>
+
+  <div class="sticky-banner">
+    <a href="https://lnkd.in/gtG-FsyQ" target="_blank">🚀 Apply for Internship</a>
+  </div>
+
+  <button id="menu-toggle" class="hamburger" aria-label="Open menu">
+    <i class="fas fa-bars"></i>
+  </button>
+
+  <aside id="sidebar" class="sidebar" aria-hidden="true">
+    <nav>
+      <ul>
+        <li><a href="https://lnkd.in/gtG-FsyQ" target="_blank"><i class="fas fa-briefcase"></i> Internship Application</a></li>
+        <li><a href="offer-letter.html" target="_blank"><i class="fas fa-file-contract"></i> Offer Letter</a></li>
+        <li><a href="certificate-verification.html" target="_blank"><i class="fas fa-certificate"></i> Certificate Verification</a></li>
+        <li><a href="join-team.html" target="_blank"><i class="fas fa-users"></i> Team Join Form</a></li>
+        <li><a href="contact-us.html" target="_blank"><i class="fas fa-envelope"></i> Contact Info</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <div class="content">
+    <div class="section" id="internship">
+      <h2>Internship Application</h2>
+      <p>Start your journey by applying through our official <a href="https://lnkd.in/gtG-FsyQ" target="_blank">LinkedIn internship link</a>. You will join our community where guidance and tasks will be provided. This is your first step to entering a dynamic learning environment filled with real-world challenges.</p>
+    </div>
+    <div class="section" id="offer">
+      <h2>Offer Letter</h2>
+      <p>After joining our internship via the community, you'll receive an official offer letter. This confirms your participation and can be used for academic validation or professional reference.</p>
+    </div>
+    <div class="section" id="certificate">
+      <h2>Certificate Verification</h2>
+      <p>Once all assigned internship tasks are completed successfully, a certificate will be issued. This certificate validates your efforts and is sharable on resumes and professional networks.</p>
+    </div>
+    <div class="section" id="join">
+      <h2>Join the Team</h2>
+      <p>Standout performers may get the opportunity to join our internal team. Express interest by filling out the dedicated team join form to get more involved.</p>
+    </div>
+    <div class="section" id="contact">
+      <h2>Contact Us</h2>
+      <p>Have any queries? You can reach us at <strong>microitinternship@gmail.com</strong>. Our team is available to support you throughout your internship journey.</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Internship Program. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const sidebar = document.getElementById('sidebar');
+
+    menuToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('active');
+      menuToggle.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
